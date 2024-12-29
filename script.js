@@ -7,8 +7,8 @@ Person.prototype.greet = function () {
 	document.getElementById("output").textContent = `Hello, my name is ${this.name}, I am ${this.age} years old.`
 }
 function createPerson() {
-	const omkar = new Person("Omkar", 26)
-	omkar.greet();
+	const alice = new Person("Alice", 25)
+	alice.greet();
 }
 function Employee(name, age, jobTitle) {
 	Person.call(this, name, age);
@@ -21,8 +21,8 @@ Employee.prototype.jobGreet = function() {
             document.getElementById("output").textContent = `Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}`;
         };
 function createEmployee() {
-            const omkar = new Employee("Omkar", 26, "Manager");
-            omkar.jobGreet(); 
+            const Bob = new Employee("Bob", 30, "Manager");
+            bob.jobGreet(); 
         }
 
 // Do not change code below this line
