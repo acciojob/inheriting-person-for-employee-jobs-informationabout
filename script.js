@@ -4,7 +4,7 @@ function Person(name, age) {
 	this.age = age;
 }
 Person.prototype.greet = function () {
-	document.getElementById("output").textContent = `Hello, my name is ${this.name}, I am ${this.age} years old.`
+	console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`)
 }
 function createPerson() {
 	const alice = new Person("Alice", 25)
@@ -18,7 +18,7 @@ Employee.prototype = Object.create(Person.prototype);
 Employee.prototype.constructor = Employee;
 
 Employee.prototype.jobGreet = function() {
-            document.getElementById("output").textContent = `Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}`;
+            console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}`);
         };
 function createEmployee() {
             const bob = new Employee("Bob", 30, "Manager");
