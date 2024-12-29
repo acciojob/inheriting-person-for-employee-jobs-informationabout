@@ -21,7 +21,7 @@ Employee.prototype.jobGreet = function() {
             document.getElementById("output").textContent = `Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}`;
         };
 function createEmployee() {
-            const Bob = new Employee("Bob", 30, "Manager");
+            const bob = new Employee("Bob", 30, "Manager");
             bob.jobGreet(); 
         }
 
