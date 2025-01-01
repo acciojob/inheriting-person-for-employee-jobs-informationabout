@@ -5,7 +5,7 @@ class Person {
         this.age = age;
     }
     greet() {
-        const message = `Hello, my name is ${this.name}, I am ${this.age} years old.`;
+        const message = `Hello, my name is ${this.name} and I am ${this.age} years old.`;
         document.getElementById("output").textContent = message;
         console.log(message);
     }
