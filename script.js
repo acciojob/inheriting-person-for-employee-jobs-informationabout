@@ -1,30 +1,39 @@
-// complete this js code
-function Person(name, age) {
-	this.name = name;
-	this.age = age;
+
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    greet() {
+        const message = `Hello, my name is ${this.name}, I am ${this.age} years old.`;
+        document.getElementById("output").textContent = message;
+        console.log(message);
+    }
 }
-Person.prototype.greet = function () {
-	console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`)
+
+class Employee extends Person {
+    constructor(name, age, jobTitle) {
+        super(name, age); 
+        this.jobTitle = jobTitle;
+    }
+
+    // Job greet method for Employee
+    jobGreet() {
+        const message = `Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`;
+        document.getElementById("output").textContent = message;
+        console.log(message);
+    }
 }
 function createPerson() {
-	const alice = new Person("Alice", 25)
-	alice.greet();
+    const alice = new Person("Alice", 25);
+    alice.greet();
 }
-function Employee(name, age, jobTitle) {
-	Person.call(this, name, age);
-	this.jobTitle = jobTitle;
-}
-Employee.prototype = Object.create(Person.prototype);
-Employee.prototype.constructor = Employee;
 
-Employee.prototype.jobGreet = function() {
-            console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}`);
-        };
 function createEmployee() {
-            const bob = new Employee("Bob", 30, "Manager");
-            bob.jobGreet(); 
-        }
+    const bob = new Employee("Bob", 30, "Manager");
+    bob.jobGreet();
+}
 
-// Do not change code below this line
+// Make classes available for testing
 window.Person = Person;
 window.Employee = Employee;
